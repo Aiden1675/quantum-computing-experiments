@@ -1,32 +1,24 @@
 # Quantum Computing Experiments
 
-Learning projects at the intersection of quantum computing and security, built in a home lab.
+Learning projects with Qiskit on a classical simulator.
 
-## Post-Quantum Cryptography Assessment
+## Scripts
+- superposition_dna_demo.py: toy DNA, protein, drug and mutation circuits
+- qubit_neuron_demo.py: toy quantum neurons and a synthetic biomarker demo
+- pqc_threat_assessment.py: classical vs post-quantum algorithm table
 
-`pqc_threat_assessment.py` prints an educational assessment of how quantum computing affects common cryptography:
+## Limitations
+- All data is synthetic or hardcoded. Nothing here is medical or diagnostic.
+- No speedup over classical methods is measured or claimed.
+- Mutation flags are hardcoded. The measured percentages do not decide them.
+- The biomarker risk score is the chance of measuring 11 on two rotated qubits.
+- PQC attack times and the 2030/2035 rows are illustrative, not predictions.
+- The factoring demo is classical trial division, not Shor's algorithm.
 
-- A table of widely used algorithms with a hardcoded status (vulnerable or partially safe)
-- How Grover's algorithm effectively halves symmetric key strength (for example, a 128-bit key gives roughly 64-bit quantum security)
-- NIST's post-quantum standards: ML-KEM (FIPS 203, formerly Kyber), ML-DSA (FIPS 204, formerly Dilithium), SLH-DSA (FIPS 205, formerly SPHINCS+), and FALCON
-- Recommended actions: inventory cryptography in use, find RSA and ECC, plan migration, build crypto-agility
-- A timeline based on the NIST IR 8547 draft, which proposes deprecating RSA and elliptic-curve algorithms after 2030 and disallowing them after 2035
-- A summary report saved as `quantum_report.txt`
+## Setup
+pip install qiskit qiskit-aer numpy
 
-### Usage
-
-```bash
+## Run
+python3 superposition_dna_demo.py
+python3 qubit_neuron_demo.py
 python3 pqc_threat_assessment.py
-```
-
-Uses only the Python standard library.
-
-### Limitations
-
-- The algorithm table and statuses are static, typed into the script. It does not scan real systems for the cryptography they use.
-- Standard names and dates reflect NIST publications at the time of writing. IR 8547 is a draft, so check NIST for current status.
-- It's a learning tool, not a migration planner or a compliance check.
-
-## Planned
-
-Qiskit simulator experiments (single-qubit measurement demos), once their write-ups are cleaned up.
