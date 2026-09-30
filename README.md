@@ -19,6 +19,6 @@ Learning projects with Qiskit on a classical simulator.
 pip install qiskit qiskit-aer numpy
 
 ## Run
-python3 superposition_dna_demo.py
-python3 qubit_neuron_demo.py
-python3 pqc_threat_assessment.py
+- python3 superposition_dna_demo.py
+- python3 qubit_neuron_demo.py
+- python3 pqc_threat_assessment.py
